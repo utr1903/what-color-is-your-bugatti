@@ -33,8 +33,8 @@ const Intro = (props) => {
       </p>
       <p>
         Though after a couple of years, you ain't there where you thought you'd
-        be... You start not to feel so special like before. You look around you
-        and see a lot people just like you.
+        be... You start not to feel so special like before. You look around
+        yourself and see a lot people just like you.
       </p>
       <p>
         Though, you accomplished every task that is put in front of you... Now,
@@ -52,7 +52,7 @@ const Intro = (props) => {
       </p>
       <p>
         With all the hatred throughout those years, you approach that fucker and
-        say: "That's a fucking ugly color for such a beatiful car!"
+        say:
       </p>
     </div>
   );

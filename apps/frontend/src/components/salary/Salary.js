@@ -17,7 +17,7 @@ const Salary = (props) => {
     const tax = 0.4;
     const savingRatio = 0.3;
 
-    const salaryNet = Number(salary * tax);
+    const salaryNet = Number(salary * (1.0-tax));
     const salarySavings = Number(salaryNet * savingRatio);
 
     let yearArray = [];
