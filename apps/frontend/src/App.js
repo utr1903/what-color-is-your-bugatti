@@ -178,7 +178,7 @@ function App() {
               </li>
             </ul> */}
         </div>
-        <div className="child">
+        <div className="main-container-child">
           <Ad />
         </div>
       </div>
