@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
 import Header from "./components/header/Header";
-import Intro from "./components/intro/Intro";
 import Ad from "./components/ads/Ad";
+import Intro from "./components/intro/Intro";
+import Salary from "./components/salary/Salary";
 
 import {
   Chart as ChartJS,
@@ -15,7 +16,6 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
-import gif from "./tate.gif";
 import "./App.css";
 
 ChartJS.register(
@@ -45,6 +45,12 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const tax = 0.4;
+    const savingRatio = 0.3;
+
+    const salaryNet = Number(salary * tax);
+    const salarySavings = Number(salaryNet * savingRatio);
+
     let yearArray = [];
 
     let salaryTotalBrutto = 0.0;
@@ -56,17 +62,17 @@ function App() {
     let salaryTotalSavings = 0.0;
     let salaryArraySavings = [];
 
-    const yearsToBuyBugatti = BUGATTI_VEYRON_COST / salary;
+    const yearsToBuyBugatti = BUGATTI_VEYRON_COST / salarySavings;
     for (let year = 0; year < yearsToBuyBugatti; year++) {
       yearArray.push(Number(year));
 
       salaryTotalBrutto = salaryTotalBrutto + Number(salary);
       salaryArrayBrutto.push(salaryTotalBrutto);
 
-      salaryTotalNet = salaryTotalNet + Number(salary) * 0.4;
+      salaryTotalNet = salaryTotalNet + salaryNet;
       salaryArrayNet.push(salaryTotalNet);
 
-      salaryTotalSavings = salaryTotalSavings + Number(salary) * 0.4 * 0.3;
+      salaryTotalSavings = salaryTotalSavings + salarySavings;
       salaryArraySavings.push(salaryTotalSavings);
     }
 
@@ -155,36 +161,9 @@ function App() {
         </div>
         <div className="main-container-center">
           <Intro />
-          <div>
-            <div className="form-container" onSubmit={handleSubmit}>
-              <form className="form-salary">
-                <span>Your brutto salary ($/year):</span>
-                <input
-                  type="number"
-                  id="salary"
-                  name="salary"
-                  value={salary}
-                  min="100"
-                  onChange={handleSalary}
-                />
-                <button type="submit">Find out!</button>
-              </form>
-            </div>
+          <Salary />
 
-            <Line
-              className="chart"
-              options={salaryOptions}
-              data={salaryData}
-              // plugins={
-              //   [
-              //     // {
-              //     //   afterDatasetsDraw: drawSollzinsbindungLimit,
-              //     // },
-              //   ]
-              // }
-            />
-
-            {/* <ul>
+          {/* <ul>
               <li>
                 <img src={gif} alt="" />
               </li>
@@ -198,7 +177,6 @@ function App() {
                 <img src={gif} alt="" />
               </li>
             </ul> */}
-          </div>
         </div>
         <div className="child">
           <Ad />
