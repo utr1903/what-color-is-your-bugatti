@@ -1,0 +1,11 @@
+.chart {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  border-style: solid;
+  border-color: rgba(5, 137, 9, 0.296);
+
+  background-color: rgba(221, 206, 206, 0.9);
+}

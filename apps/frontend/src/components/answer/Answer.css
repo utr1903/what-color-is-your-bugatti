@@ -1,0 +1,32 @@
+.answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer p {
+  padding: 0.5%;
+  font-size: large;
+}
+
+.answer button {
+  padding: 10px 20px;
+  background-color: rgba(137, 75, 5, 0.9);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  
+  left: 0;
+  width: 100%;
+}
+
+.answer button:hover {
+  background-color: rgba(231, 125, 4, 0.9);
+}
+
+.answer img {
+  margin: 1%;
+  width: 40%;
+}

@@ -1,0 +1,36 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary p {
+  padding: 0.5%;
+  font-size: large;
+}
+
+.summary span {
+  font-weight: bolder;
+}
+
+.summary button {
+  padding: 10px 20px;
+  background-color: rgba(137, 75, 5, 0.9);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  
+  left: 0;
+  width: 100%;
+}
+
+.summary button:hover {
+  background-color: rgba(231, 125, 4, 0.9);
+}
+
+.summary img {
+  margin: 1%;
+  width: 80%;
+}
