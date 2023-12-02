@@ -4,14 +4,14 @@ import SalaryLineChart from "./SalaryLineChart";
 
 import "./Salary.css";
 
-const Salary = () => {
-  const BUGATTI_VEYRON_COST = 2000000;
+const Salary = (props) => {
+  const BUGATTI_VEYRON_COST = props.BUGATTI_VEYRON_COST;
 
   // Is form submitted?
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   // Salary
-  const [salaries, setSalaries] = useState(70000);
+  const [salaries, setSalaries] = useState();
 
   const calculateSalaries = (salary) => {
     const tax = 0.4;
@@ -45,13 +45,18 @@ const Salary = () => {
       salaryArraySavings.push(salaryTotalSavings);
     }
 
-    setIsFormSubmitted(true);
-    setSalaries({
+    const salaries = {
       yearArray,
       salaryArrayBrutto,
       salaryArrayNet,
       salaryArraySavings,
-    });
+    };
+
+    setIsFormSubmitted(true);
+    setSalaries(salaries);
+
+    props.handleIsFormSubmitted(true);
+    props.handleSalaries(salaries);
   };
 
   return (
