@@ -7,6 +7,9 @@ import "./Salary.css";
 const Salary = () => {
   const BUGATTI_VEYRON_COST = 2000000;
 
+  // Is form submitted?
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
   // Salary
   const [salaries, setSalaries] = useState(70000);
 
@@ -42,6 +45,7 @@ const Salary = () => {
       salaryArraySavings.push(salaryTotalSavings);
     }
 
+    setIsFormSubmitted(true);
     setSalaries({
       yearArray,
       salaryArrayBrutto,
@@ -53,7 +57,7 @@ const Salary = () => {
   return (
     <Fragment>
       <SalaryForm getSalary={calculateSalaries} />
-      <SalaryLineChart salaries={salaries} />
+      {isFormSubmitted && <SalaryLineChart salaries={salaries} />}
     </Fragment>
   );
 };
