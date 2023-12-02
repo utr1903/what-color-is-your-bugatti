@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Header from "./components/header/Header";
+import Intro from "./components/intro/Intro";
 import Ad from "./components/ads/Ad";
 
 import {
@@ -153,23 +154,8 @@ function App() {
           <Ad />
         </div>
         <div className="main-container-center">
+          <Intro />
           <div>
-            <p>
-              Are you a doctor? Or an engineer? Maybe a lawyer? You have
-              well-educated parents, you went to the greatest universities, had
-              the best GPAs?
-            </p>
-            <p>
-              Seems like you've achieved everything you were told since you're a
-              kid! You should be proudly prosper the rest of your life, but that
-              ain't the case, init?
-            </p>
-            <p>
-              You're willing to live in a big city in a huge apartment. You want
-              your separete rooms for whatever hobbies you have, a huge balcony
-              or maybe a terasse where you can grill.
-            </p>
-
             <div className="form-container" onSubmit={handleSubmit}>
               <form className="form-salary">
                 <span>Your brutto salary ($/year):</span>
